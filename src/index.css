@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-stone-gold: #c5a47e;
+  --color-deep-black: #050505;
+  --color-soft-white: #e5e5e5;
+  
+  --color-primary-pink: #c5a47e; /* Remapping old names to maintain variable consistency but with new theme */
+  --color-light-pink: rgba(197, 164, 126, 0.1);
+  --color-gold: #c5a47e;
+  --color-light-gold: rgba(197, 164, 126, 0.05);
+  --color-success: #88a183;
+  --color-danger: #a18383;
+}
+
+@layer base {
+  body {
+    @apply font-sans bg-deep-black text-soft-white;
+  }
+}
+
+@keyframes pulse-custom {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(197, 164, 126, 0.4); }
+  70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(197, 164, 126, 0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(197, 164, 126, 0); }
+}
+
+.animate-pulse-custom {
+  animation: pulse-custom 2s infinite;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+}
+
+.animate-shake {
+  animation: shake 0.4s;
+}
+
